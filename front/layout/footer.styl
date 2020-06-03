@@ -1,0 +1,189 @@
+.siteFooter {
+    position relative
+    width 100%
+    min-height footer_height_min
+    box-shadow 0 0 100px rgba(black, 0.12)
+
+    &::before, &::after {
+        content ''
+        position absolute
+        z-index 0
+        top 0
+        left 0
+        width 100%
+        height 100%
+    }
+    &::before {
+        background linear-gradient(to bottom, c_primary, c_primary_dark, black)
+    }
+    &::after {
+        background linear-gradient(to right, black, darken(c_primary, 15%) 30%, c_primary, darken(c_primary, 15%) 70%, black)
+        opacity 0.25
+    }
+
+    a {
+        font-weight 600
+        color white
+        text-decoration underline
+        text-decoration-color transparent
+        &:hover, &:focus {
+            text-decoration-color white
+        }
+    }
+
+    &-inner,
+    &-copyright {
+        position relative
+        z-index 1
+    }
+
+    &-inner {
+        display flex
+        flex-direction row
+        align-items stretch
+        justify-content space-between
+        padding 2rem 0
+    }
+
+    &-title {
+        display block
+        font-size 1.5rem
+        font-weight 700
+        margin 1rem 0 1.5rem
+    }
+
+    &-overview {
+        width 30%
+        .-logo {
+            opacity 0.75
+            img {
+                width 400pxr
+                max-width 100%
+            }
+            &:hover, &:focus {
+                opacity 1
+            }
+        }
+        .-description {
+            margin 1rem 0 0
+        }
+        .-menu {
+            width calc(100% + 0.5rem)
+            margin-top 1rem
+            margin-left -0.25rem
+            a {
+                padding 0 0.25rem
+                font-size 0.9rem
+                opacity 0.5
+                &::after {
+                    content '●'
+                    display inline-block
+                    padding-left 0.5rem
+                    color rgba(white, 0.5)
+                }
+                &:last-child {
+                    &::after {
+                        display none
+                    }
+                }
+                &[href=''] {
+                    display none
+                }
+                &:hover, &:focus {
+                    opacity 0.75
+                }
+            }
+        }
+        .-certificates {
+            margin-top 2rem
+            opacity 0.25
+        }
+    }
+
+    &-products {
+        width 20%
+        .-productTypes {
+            display flex
+            flex-direction column
+            align-items flex-start
+        }
+        .-productType {
+            display block
+            padding 0.25rem 1rem
+            margin-left -1rem
+            width auto
+            font-size 1.32rem
+            text-decoration underline
+            text-decoration-color rgba(white, 0)
+            &:hover, &:focus {
+                text-decoration-color rgba(white, 0.75)
+            }
+        }
+    }
+
+    &-contact {
+        width 20%
+        .-contacts {
+            padding-top 0.4rem
+        }
+        .-contact {
+            display flex
+            flex-direction column
+            align-items flex-start
+            margin 2rem 0
+            &:first-child {
+                margin-top 0
+            }
+            .-label {
+                display block
+                font-size 1.2rem
+                color rgba(white, 0.5)
+            }
+            .-line {
+                display block
+                padding 0.1rem 1rem
+                margin-left -1rem
+            }
+        }
+    }
+
+    &-copyright {
+        width 100%
+        padding 0 0 2rem
+        text-align center
+        opacity 0.5
+    }
+
+    @media (max-width 719px) {
+        &-inner {
+            display block
+            text-align center
+        }
+        &-title {
+            margin-top 2em
+            font-weight 300
+            font-size 2.1rem
+        }
+        &-overview,
+        &-products,
+        &-contact {
+            width 100%
+        }
+        .-productTypes, .-contact {
+            align-items center
+        }
+        .-productType, .-line {
+            margin-left 0 !important
+        }
+        .-line {
+            font-size 1.2rem
+        }
+        button {
+            display inline-flex
+            margin 1rem 0
+        }
+        &-copyright {
+            padding-bottom 4rem
+        }
+    }
+}

@@ -1,0 +1,227 @@
+.cont {
+    max-width 1366pxr
+    width 90%
+    margin 0 auto
+}
+
+
+.siteContent {
+    position relative
+    z-index 1
+    margin-top header_height
+    min-height 'calc(100vh - %s)' % footer_height_min
+    body.tax-product_type &,
+    body.post-type-archive-product &,
+    body.single-product & {
+        background c_lightest
+        color c_dark
+        &::after {
+            display none
+        }
+    }
+    &::after {
+        content ''
+        position absolute
+        z-index -1
+        top 0
+        left 0
+        width 100%
+        height 100%
+        background linear-gradient(to right, rgba(black, 0.25), rgba(black, 0), rgba(black, 0.25))
+    }
+}
+
+.siteBg {
+    position absolute
+    z-index 0
+    top 0
+    left 0
+    width 100%
+    height 100vh
+    background linear-gradient(to bottom, c_primary, rgba(c_primary, 0))
+    &::before {
+        content ''
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 60%
+        background linear-gradient(to bottom, rgba(c_primary_lighter, 0.5), rgba(c_primary_lighter, 0.05) 75%, rgba(c_primary_light, 0)),
+        radial-gradient(farthest-side at top, c_primary_lighter, rgba(c_primary_lighter, 0.25) 50%, rgba(c_primary_lighter, 0.05) 75%, rgba(c_primary_lighter, 0))
+        pointer-events none
+    }
+    .-godrays {
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        filter blur(20px)
+        perspective 100vw
+    }
+    .-godray {
+        position absolute
+        top 0
+        width 15%
+        height 60%
+        background radial-gradient(farthest-side at top, rgba(white, 0.5), rgba(white, 0.15) 50%, rgba(white, 0.025) 80%, rgba(white, 0))
+        transform rotate3d(1, 0, 0, -60deg) translate3d(0, -10%, 0)
+
+        &:first-child {
+            left 10vw
+        }
+        &:nth-child(2) {
+            left 42.5%
+        }
+        &:last-child {
+            right 10vw
+        }
+    }
+}
+
+#bg-preloader {
+    display none
+}
+
+.z-layer {
+    background-color white
+    box-shadow 0 4px 15px rgba(black, 0.04), 0 2px 5px rgba(black, 0.04)
+    &--interactive {
+        transition transition_fast
+        &:hover, &:focus {
+            box-shadow 0 10px 50px rgba(black, 0.1), 0 5px 15px rgba(black, 0.05)
+            transform translateY(-2px)
+        }
+    }
+}
+
+html.has--js {
+    #bg-preloader {
+        display block
+        position fixed
+        z-index 0
+        top calc(50vh - 30pxr)
+        left calc(50vw - 30pxr)
+        width 60pxr
+        height 60pxr
+        opacity 0
+        transition transition_fast
+    }
+    &.is--loading,
+    &.is--unloading {
+        overflow-x hidden
+        #bg-preloader {
+            opacity 1
+        }
+        .siteContent, .siteFooter {
+            opacity 0
+        }
+    }
+    &.is--loading {
+        .siteContent {
+            transform translateX(-50px)
+        }
+        .siteFooter {
+            transform translateX(-20px)
+        }
+    }
+    &.is--unloading {
+        .siteContent {
+            transform translateX(50px)
+        }
+        .siteFooter {
+            transform translateX(20px)
+        }
+    }
+    .siteContent, .siteFooter {
+        transition transition_side
+    }
+}
+
+&.theme-light {
+    h1, h2, h3, h4, h5, h6 {
+        color c_darkest
+    }
+}
+
+
+&.theme-dark {
+    a {
+        color rgba(white, 0.9)
+        text-decoration-color rgba(white, 0)
+        &:hover, &:focus {
+            text-decoration-color rgba(white, 0.75)
+            color white
+        }
+    }
+}
+
+.wysiwyg-content {
+    a {
+        font-weight bolder
+        color c_primary
+        text-decoration underline
+        text-decoration-color rgba(c_primary_light, 0)
+
+        &:hover, &:focus {
+            text-decoration-color rgba(c_primary_light, 0.75)
+            color c_primary_light
+        }
+    }
+    a {
+        display initial
+    }
+    ol, ul {
+        margin 1rem 0 2rem
+        padding-left 2.25rem
+        font-size 1rem
+        li {
+            position relative
+            margin 0.5rem 0
+            line-height 1.4
+            &::before {
+                position absolute
+                right calc(100% + 0.75rem)
+                font-weight 700
+                color c_primary
+            }
+        }
+    }
+    ol {
+        counter-reset cnt
+        li {
+            &::before {
+                content counter(cnt) "."
+                counter-increment cnt
+            }
+        }
+    }
+    ul {
+        li {
+            &::before {
+                content "●"
+            }
+        }
+    }
+
+    blockquote {
+        position relative
+        margin 2rem 0 1rem
+        padding 1rem 2rem
+        font-weight 400
+        color c_darkest
+        background-color rgba(black, 0.05)
+        border-left 4px solid c_primary
+        p {
+            margin 0
+            font-size 1.4em
+        }
+        & + p {
+            margin-top 0
+        }
+        cite {
+            opacity 0.5
+            font-style normal
+        }
+    }
+}

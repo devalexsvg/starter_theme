@@ -1,0 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800);
+html {
+  font-size: 10px;
+  background-color: #fff;
+}
+html body.mce-content-body,
+html body.wp-autoresize.mce-content-body {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem 4rem !important;
+  border: 1px solid #eee;
+  background-color: #fff;
+  opacity: 1;
+}
+

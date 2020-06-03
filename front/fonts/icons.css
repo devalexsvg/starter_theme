@@ -1,0 +1,51 @@
+@font-face {
+	font-family: "icons";
+	src: url("fonts/icons.eot?00535ec05aa5ffa7562bf8c5ba1717bc?#iefix") format("embedded-opentype"),
+url("fonts/icons.woff2?00535ec05aa5ffa7562bf8c5ba1717bc") format("woff2"),
+url("fonts/icons.woff?00535ec05aa5ffa7562bf8c5ba1717bc") format("woff");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-arrow-further:before {
+	content: "\f101";
+}
+.icon-browser-search:before {
+	content: "\f102";
+}
+.icon-close:before {
+	content: "\f103";
+}
+.icon-download:before {
+	content: "\f104";
+}
+.icon-home:before {
+	content: "\f105";
+}
+.icon-reload:before {
+	content: "\f106";
+}
+.icon-search:before {
+	content: "\f107";
+}
+.icon-send:before {
+	content: "\f108";
+}
+.icon-share:before {
+	content: "\f109";
+}
+.icon-video-play:before {
+	content: "\f10a";
+}
+.icon-video-player:before {
+	content: "\f10b";
+}

@@ -1,0 +1,148 @@
+header_height = 75pxr
+footer_height_min = 540pxr
+
+::-moz-selection {
+    color white
+    background-color c_secondary_dark
+}
+::selection {
+    color white
+    background-color c_secondary_dark
+}
+
+html, body {
+    overflow-x hidden
+    line-height 1.6
+    font-family f_primary
+    font-size 16px
+    text-rendering optimizeLegibility
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    -webkit-text-stroke 0
+    color c_lighter
+    background linear-gradient(to top, c_primary_darkest, c_primary_darker), c_primary_darker
+
+    &::-webkit-scrollbar-button {
+        height 4px
+        background-color c_primary_dark
+    }
+    &::-webkit-scrollbar-track {
+        background-color c_primary_dark
+    }
+    &::-webkit-scrollbar {
+        width 12px
+        background-color c_primary_dark
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color c_primary
+    }
+    gate_upper = (16 * 800 / 14)px
+    @media (min-width 800px) {
+        font-size (16 / gate_upper * 100)vw
+    }
+    @media (min-width gate_upper) {
+        font-size 16px
+    }
+    @media (max-width 799px) {
+        font-size 14px
+    }
+}
+
+
+body {
+}
+
+button, input, textarea {
+    font-family f_primary
+    font-size 1rem
+    line-height 1.6
+    color c_dark
+    outline none
+    -webkit-appearance none
+}
+
+a {
+    font-weight bolder
+    color c_darkest
+    text-decoration none
+    transition transition_fast
+
+    &:focus {
+        outline none
+    }
+
+    &:hover, &:focus {
+        color c_primary
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin 0.75em 0 0.25em
+    text-transform uppercase
+    font-weight 700
+    line-height 1.3
+    font-family f_secondary
+
+    a {
+        font-weight inherit
+        color inherit
+    }
+}
+
+h1 {
+    font-size 2.4rem
+}
+
+h2 {
+    font-size 1.8rem
+}
+
+h3 {
+    font-size 1.6rem
+}
+
+h4 {
+    font-size 1.5rem
+}
+
+h5, h6 {
+    line-height 1.4
+}
+
+h5 {
+    font-size 1.25rem
+}
+
+h6 {
+    text-transform uppercase
+    font-size 1.1rem
+}
+
+p {
+    margin 0.5em 0 1em
+}
+
+em {
+    font-weight 600
+}
+
+strong {
+    font-weight 700
+}
+
+sub,
+sup {
+    font-size 0.6em
+    font-weight bolder
+}
+sub {
+    vertical-align sub
+}
+
+sup {
+    vertical-align super
+}
+
+mark {
+    background-color rgba(c_secondary_light, 0.25)
+}

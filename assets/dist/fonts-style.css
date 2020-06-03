@@ -1,0 +1,77 @@
+@font-face {
+  font-family: 'Flama';
+  font-style: normal;
+  font-weight: 400;
+  src: url(/assets/fonts/Flama-Regular.otf?54f5f645f140cd68536c94c32f92d865) format('opentype');
+}
+@font-face {
+  font-family: 'Flama';
+  font-style: normal;
+  font-weight: 700;
+  src: url(/assets/fonts/Flama-Bold.otf?6fd97335ad390a64fcf63b385f298c2b) format('opentype');
+}
+@font-face {
+  font-family: 'Flama';
+  font-style: normal;
+  font-weight: 600;
+  src: url(/assets/fonts/Flama-Basic.otf?fa5aa0537d22980914bb74e4f1f2cdf3) format('opentype');
+}
+@font-face {
+  font-family: 'Flama';
+  font-style: normal;
+  font-weight: 300;
+  src: url(/assets/fonts/Flama-Light.otf?62bd1affe0c819bc1d857e1a49589f33) format('opentype');
+}
+@font-face {
+	font-family: "icons";
+	src: url(/assets/fonts/icons.eot?179a4264304d84f5d22e98b54e509b37?#iefix) format("embedded-opentype"),
+url(/assets/fonts/icons.woff2?a70a66f7ebd47b3e8f578ae47021cf62) format("woff2"),
+url(/assets/fonts/icons.woff?21723cf6af15ac59e431d6d1ea94d86f) format("woff");
+}
+
+.icon {
+	line-height: 1;
+}
+
+.icon:before {
+	font-family: icons !important;
+	font-style: normal;
+	font-weight: normal !important;
+	vertical-align: top;
+}
+
+.icon-arrow-further:before {
+	content: "\f101";
+}
+.icon-browser-search:before {
+	content: "\f102";
+}
+.icon-close:before {
+	content: "\f103";
+}
+.icon-download:before {
+	content: "\f104";
+}
+.icon-home:before {
+	content: "\f105";
+}
+.icon-reload:before {
+	content: "\f106";
+}
+.icon-search:before {
+	content: "\f107";
+}
+.icon-send:before {
+	content: "\f108";
+}
+.icon-share:before {
+	content: "\f109";
+}
+.icon-video-play:before {
+	content: "\f10a";
+}
+.icon-video-player:before {
+	content: "\f10b";
+}
+
+
